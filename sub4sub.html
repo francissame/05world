@@ -1,122 +1,136 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-bs-theme="dark">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Sub4Sub</title>
+  <title>Sub4Sub Exchange</title>
+  <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
   <style>
     body {
-      background-color: #121212;
-      color: #ffffff;
       font-family: 'Segoe UI', sans-serif;
-      padding: 2rem;
+      transition: background-color 0.3s, color 0.3s;
+      padding-top: 4rem;
     }
 
-    .sub4sub-box {
-      background-color: #1e1e1e;
-      padding: 2rem;
-      border-radius: 10px;
-      box-shadow: 0 0 20px rgba(0,0,0,0.6);
-      max-width: 800px;
-      margin: auto;
+    .container {
+      max-width: 900px;
     }
 
-    .form-control {
-      background-color: #2a2a2a;
-      border: none;
-      color: #fff;
-    }
-
-    .form-control:focus {
-      background-color: #333;
-      color: #fff;
-      border-color: #0d6efd;
-      box-shadow: none;
-    }
-
-    .btn-primary {
-      background-color: #0d6efd;
-      border: none;
-    }
-
-    .btn-primary:hover {
-      background-color: #0b5ed7;
-    }
-
-    .user-list {
-      margin-top: 2rem;
+    .form-control,
+    .btn {
+      transition: background-color 0.3s, color 0.3s;
     }
 
     .user-card {
-      background-color: #2a2a2a;
-      padding: 1rem;
+      border: 1px solid rgba(255, 255, 255, 0.05);
       border-radius: 8px;
+      padding: 1rem;
       margin-bottom: 1rem;
+      transition: background-color 0.3s;
     }
 
-    a.channel-link {
-      color: #0d6efd;
+    .theme-toggle {
+      position: fixed;
+      top: 1rem;
+      right: 1rem;
+      z-index: 999;
+    }
+
+    .form-label {
+      font-weight: 500;
+    }
+
+    .channel-link {
+      color: var(--bs-primary);
       text-decoration: none;
     }
 
-    a.channel-link:hover {
+    .channel-link:hover {
       text-decoration: underline;
+    }
+
+    .card-title {
+      font-size: 1.1rem;
+      font-weight: 600;
+    }
+
+    .sub-button {
+      min-width: 100px;
     }
   </style>
 </head>
 <body>
 
-  <div class="sub4sub-box">
-    <h3 class="text-center mb-4">🔄 Sub4Sub Platform</h3>
+  <!-- Theme Toggle Switch -->
+  <div class="theme-toggle">
+    <div class="form-check form-switch text-end">
+      <input class="form-check-input" type="checkbox" role="switch" id="themeSwitch" checked>
+      <label class="form-check-label" for="themeSwitch">Dark Mode</label>
+    </div>
+  </div>
 
-    <form>
+  <div class="container">
+    <h2 class="text-center mb-4">🔄 Sub4Sub Exchange</h2>
+
+    <!-- Channel Submission Form -->
+    <form class="mb-5">
       <div class="mb-3">
-        <label for="channelLink" class="form-label">Your YouTube Channel Link</label>
+        <label for="channelLink" class="form-label">YouTube Channel Link</label>
         <input type="url" class="form-control" id="channelLink" placeholder="https://youtube.com/yourchannel" required />
       </div>
 
       <div class="mb-3">
         <label for="description" class="form-label">Short Description</label>
-        <textarea class="form-control" id="description" rows="2" placeholder="Tell others why they should subscribe to you!" required></textarea>
+        <textarea class="form-control" id="description" rows="2" placeholder="Why should others subscribe to you?" required></textarea>
       </div>
 
-      <div class="d-grid">
-        <button type="submit" class="btn btn-primary">Submit My Channel</button>
+      <div class="d-grid d-md-flex justify-content-md-end">
+        <button type="submit" class="btn btn-primary px-4">Submit Channel</button>
       </div>
     </form>
 
-    <div class="user-list">
-      <h5 class="mt-4 mb-3">🚀 Channels to Subscribe To</h5>
+    <!-- Channel List -->
+    <h5 class="mb-3">🌟 Recommended Channels</h5>
 
-      <!-- Example User Card -->
-      <div class="user-card">
-        <div class="d-flex justify-content-between align-items-center">
-          <div>
-            <strong>🔥 TechWithSam</strong><br/>
-            <a href="https://youtube.com/channel/techwithsam" target="_blank" class="channel-link">Visit Channel</a>
-            <p class="mb-0 mt-1 text-light small">"Daily tech tutorials and gadget reviews!"</p>
-          </div>
-          <button class="btn btn-sm btn-outline-light">Subscribed</button>
+    <div class="user-card bg-body-secondary">
+      <div class="d-flex justify-content-between align-items-center flex-wrap">
+        <div>
+          <div class="card-title">TechWithSam</div>
+          <a href="https://youtube.com/channel/techwithsam" target="_blank" class="channel-link">Visit Channel</a>
+          <p class="mb-0 mt-1 small">Tech tutorials and gadget reviews.</p>
         </div>
+        <button class="btn btn-outline-primary sub-button mt-3 mt-md-0">Subscribed</button>
       </div>
-
-      <div class="user-card">
-        <div class="d-flex justify-content-between align-items-center">
-          <div>
-            <strong>🎮 GameZone</strong><br/>
-            <a href="https://youtube.com/channel/gamezone" target="_blank" class="channel-link">Visit Channel</a>
-            <p class="mb-0 mt-1 text-light small">"Let's play, stream, and win together!"</p>
-          </div>
-          <button class="btn btn-sm btn-outline-light">Subscribe</button>
-        </div>
-      </div>
-
-      <!-- Add more user cards here dynamically or manually -->
-
     </div>
+
+    <div class="user-card bg-body-secondary">
+      <div class="d-flex justify-content-between align-items-center flex-wrap">
+        <div>
+          <div class="card-title">GameZone</div>
+          <a href="https://youtube.com/channel/gamezone" target="_blank" class="channel-link">Visit Channel</a>
+          <p class="mb-0 mt-1 small">Gaming walkthroughs and live streams.</p>
+        </div>
+        <button class="btn btn-primary sub-button mt-3 mt-md-0">Subscribe</button>
+      </div>
+    </div>
+
+    <!-- Add more user cards as needed -->
   </div>
 
+  <!-- Bootstrap JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Theme Toggle Script -->
+  <script>
+    const themeSwitch = document.getElementById('themeSwitch');
+    const htmlTag = document.documentElement;
+
+    themeSwitch.addEventListener('change', function () {
+      const theme = this.checked ? 'dark' : 'light';
+      htmlTag.setAttribute('data-bs-theme', theme);
+      document.querySelector('label[for="themeSwitch"]').textContent = theme === 'dark' ? 'Dark Mode' : 'Light Mode';
+    });
+  </script>
 </body>
 </html>
