@@ -1,113 +1,122 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>YouTube Web App - Sub for Sub</title>
-  <!-- Bootstrap CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sub4Sub</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
   <style>
     body {
-      background-color: #f9f9f9;
+      background-color: #121212;
+      color: #ffffff;
+      font-family: 'Segoe UI', sans-serif;
+      padding: 2rem;
     }
 
-    .container {
-      margin-top: 50px;
-    }
-
-    .card {
-      margin-bottom: 20px;
+    .sub4sub-box {
+      background-color: #1e1e1e;
+      padding: 2rem;
       border-radius: 10px;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 0 20px rgba(0,0,0,0.6);
+      max-width: 800px;
+      margin: auto;
     }
 
-    .card-title {
-      font-size: 24px;
-      color: #ff0000; /* YouTube Red */
+    .form-control {
+      background-color: #2a2a2a;
+      border: none;
+      color: #fff;
     }
 
-    .btn-youtube {
-      background-color: #ff0000;
-      color: white;
+    .form-control:focus {
+      background-color: #333;
+      color: #fff;
+      border-color: #0d6efd;
+      box-shadow: none;
+    }
+
+    .btn-primary {
+      background-color: #0d6efd;
       border: none;
     }
 
-    .btn-youtube:hover {
-      background-color: #cc0000;
+    .btn-primary:hover {
+      background-color: #0b5ed7;
     }
 
-    .card-body {
-      text-align: center;
+    .user-list {
+      margin-top: 2rem;
     }
 
-    .card img {
-      width: 100%;
-      border-radius: 10px;
+    .user-card {
+      background-color: #2a2a2a;
+      padding: 1rem;
+      border-radius: 8px;
+      margin-bottom: 1rem;
     }
 
-    .channel-name {
-      font-size: 18px;
-      font-weight: bold;
+    a.channel-link {
+      color: #0d6efd;
+      text-decoration: none;
     }
 
-    .sub-count {
-      font-size: 16px;
-      color: gray;
-    }
-
-    .btn-group {
-      margin-top: 10px;
+    a.channel-link:hover {
+      text-decoration: underline;
     }
   </style>
 </head>
 <body>
 
-  <div class="container">
-    <h2 class="text-center mb-4">Sub for Sub</h2>
+  <div class="sub4sub-box">
+    <h3 class="text-center mb-4">🔄 Sub4Sub Platform</h3>
 
-    <!-- Card for a channel -->
-    <div class="card">
-      <div class="row g-0">
-        <div class="col-md-4">
-          <img src="https://via.placeholder.com/200" class="img-fluid rounded-start" alt="Channel Thumbnail">
-        </div>
-        <div class="col-md-8">
-          <div class="card-body">
-            <h5 class="card-title channel-name">Channel Name 1</h5>
-            <p class="sub-count">Subscribers: 5,000</p>
-            <div class="btn-group">
-              <button class="btn btn-youtube">Subscribe</button>
-              <button class="btn btn-outline-secondary">View Channel</button>
-            </div>
+    <form>
+      <div class="mb-3">
+        <label for="channelLink" class="form-label">Your YouTube Channel Link</label>
+        <input type="url" class="form-control" id="channelLink" placeholder="https://youtube.com/yourchannel" required />
+      </div>
+
+      <div class="mb-3">
+        <label for="description" class="form-label">Short Description</label>
+        <textarea class="form-control" id="description" rows="2" placeholder="Tell others why they should subscribe to you!" required></textarea>
+      </div>
+
+      <div class="d-grid">
+        <button type="submit" class="btn btn-primary">Submit My Channel</button>
+      </div>
+    </form>
+
+    <div class="user-list">
+      <h5 class="mt-4 mb-3">🚀 Channels to Subscribe To</h5>
+
+      <!-- Example User Card -->
+      <div class="user-card">
+        <div class="d-flex justify-content-between align-items-center">
+          <div>
+            <strong>🔥 TechWithSam</strong><br/>
+            <a href="https://youtube.com/channel/techwithsam" target="_blank" class="channel-link">Visit Channel</a>
+            <p class="mb-0 mt-1 text-light small">"Daily tech tutorials and gadget reviews!"</p>
           </div>
+          <button class="btn btn-sm btn-outline-light">Subscribed</button>
         </div>
       </div>
-    </div>
 
-    <!-- Repeat this card for more channels -->
-    <div class="card">
-      <div class="row g-0">
-        <div class="col-md-4">
-          <img src="https://via.placeholder.com/200" class="img-fluid rounded-start" alt="Channel Thumbnail">
-        </div>
-        <div class="col-md-8">
-          <div class="card-body">
-            <h5 class="card-title channel-name">Channel Name 2</h5>
-            <p class="sub-count">Subscribers: 3,200</p>
-            <div class="btn-group">
-              <button class="btn btn-youtube">Subscribe</button>
-              <button class="btn btn-outline-secondary">View Channel</button>
-            </div>
+      <div class="user-card">
+        <div class="d-flex justify-content-between align-items-center">
+          <div>
+            <strong>🎮 GameZone</strong><br/>
+            <a href="https://youtube.com/channel/gamezone" target="_blank" class="channel-link">Visit Channel</a>
+            <p class="mb-0 mt-1 text-light small">"Let's play, stream, and win together!"</p>
           </div>
+          <button class="btn btn-sm btn-outline-light">Subscribe</button>
         </div>
       </div>
+
+      <!-- Add more user cards here dynamically or manually -->
+
     </div>
-
-    <!-- Add more cards as necessary for other channels -->
-
   </div>
 
-  <!-- Bootstrap JS -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
