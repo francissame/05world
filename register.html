@@ -31,3 +31,85 @@
       border: none;
       color: #fff;
     }
+
+    .form-control:focus {
+      background-color: #333;
+      color: #fff;
+      border-color: #0d6efd;
+      box-shadow: none;
+    }
+
+    .btn-primary {
+      background-color: #0d6efd;
+      border: none;
+    }
+
+    .btn-primary:hover {
+      background-color: #0b5ed7;
+    }
+
+    .form-check-label {
+      color: #ccc;
+    }
+
+    .small-text {
+      font-size: 0.9rem;
+      color: #aaa;
+    }
+
+    @media (max-width: 576px) {
+      .register-box {
+        padding: 2rem 1.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="register-box">
+    <h3 class="text-center mb-4">Create Account</h3>
+    <form>
+      <div class="mb-3">
+        <label for="fullname" class="form-label">Full Name</label>
+        <input type="text" class="form-control" id="fullname" placeholder="Enter full name" required />
+      </div>
+
+      <div class="mb-3">
+        <label for="email" class="form-label">Email Address</label>
+        <input type="email" class="form-control" id="email" placeholder="Enter email" required />
+      </div>
+
+      <div class="mb-3">
+        <label for="username" class="form-label">Username</label>
+        <input type="text" class="form-control" id="username" placeholder="Choose a username" required />
+      </div>
+
+      <div class="mb-3">
+        <label for="password" class="form-label">Password</label>
+        <input type="password" class="form-control" id="password" placeholder="Create a password" required />
+      </div>
+
+      <div class="mb-3">
+        <label for="confirm-password" class="form-label">Confirm Password</label>
+        <input type="password" class="form-control" id="confirm-password" placeholder="Repeat password" required />
+      </div>
+
+      <div class="mb-3 form-check">
+        <input type="checkbox" class="form-check-input" id="terms" required />
+        <label class="form-check-label" for="terms">I agree to the <a href="#" class="text-decoration-none text-light">terms and conditions</a></label>
+      </div>
+
+      <div class="d-grid">
+        <button type="submit" class="btn btn-primary">Register</button>
+      </div>
+
+      <div class="text-center mt-3 small-text">
+        Already have an account? <a href="login.html" class="text-decoration-none text-light">Login here</a>
+      </div>
+    </form>
+  </div>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
